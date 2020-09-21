@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
     const newAccount = req.body;
 
     try {
-        const account = await db.VERSION('accounts').insert(newAccount);
+        const account = await db('accounts').insert(newAccount);
         res.status(201).json({
             success: true,
             message: 'Account created successfully',
